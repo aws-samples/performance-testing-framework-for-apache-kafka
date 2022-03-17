@@ -656,9 +656,6 @@ export class CdkStack extends Stack {
 
     const sagemakerInstanceRole = new iam.Role(this, 'SagemakerInstanceRole', {
       assumedBy: new iam.ServicePrincipal('sagemaker.amazonaws.com'),
-      managedPolicies: [
-//        iam.ManagedPolicy.fromAwsManagedPolicyName('CloudWatchReadOnlyAccess'),
-      ],
       inlinePolicies: {
         cloudFormation: new iam.PolicyDocument({
           statements: [new iam.PolicyStatement({
